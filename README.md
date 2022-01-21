@@ -24,8 +24,8 @@ The main purpose of this tool is to batch container inspection for a specific gr
 | HALO_API_HOSTNAME | Halo API Host Name | https://api.cloudpassage.com |
 | HALO_API_PORT | Halo API Port Number | 443 |
 | HALO_API_VERSION | HALO EndPoint Version | v1 |
-| TARGET_GROUP_ID | Target Group ID | ***6a***b620**b4** |
-| OUTPUT_DIRECTORY | Location for generated CSV file | "/var/log" |
+| TARGET_GROUP_ID | Target Group ID | <TARGET_GROUP_ID> |
+| OUTPUT_DIRECTORY | Location for generated CSV file | /var/log |
 
 
 ## How to run the tool (stand-alone):
