@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import sys
 
 from halo import config_helper

@@ -12,7 +12,7 @@ The main purpose of this tool is to batch container inspection for a specific gr
 
 ```
    git clone https://github.com/cloudpassage/CI_Servers.git
-   cd CI_Servers/app
+   cd CI_Servers
    pip install -r requirements.txt
 ```
 
@@ -24,8 +24,8 @@ The main purpose of this tool is to batch container inspection for a specific gr
 | HALO_API_HOSTNAME | Halo API Host Name | https://api.cloudpassage.com |
 | HALO_API_PORT | Halo API Port Number | 443 |
 | HALO_API_VERSION | HALO EndPoint Version | v1 |
-| TARGET_GROUP_ID | Target Group ID | *******6a4*******b620*****b4*** |
-| OUTPUT_DIRECTORY | Location for generated CSV file | "C:/users/admin/documents" |
+| TARGET_GROUP_ID | Target Group ID | ***6a***b620**b4** |
+| OUTPUT_DIRECTORY | Location for generated CSV file | "/var/log" |
 
 
 ## How to run the tool (stand-alone):
@@ -44,7 +44,7 @@ Clone the code and build the container:
 ```
    git clone https://github.com/cloudpassage/CI_Servers.git
    cd CI_Servers
-   docker build -t CI_Servers .
+   docker build -t ci_servers .
 ```
 
 To run the container interactively:
@@ -54,6 +54,6 @@ To run the container interactively:
     -e HALO_API_KEY_ID=$HALO_API_KEY_ID \
     -e HALO_API_KEY_SECRET=$HALO_API_KEY_SECRET \
     -e TARGET_GROUP_ID=$TARGET_GROUP_ID \
-    -e OUTPUT_DIRECTORY=$OUTPUT_DIRECTORY \
-    CI_Servers
+    -v $OUTPUT_DIRECTORY:/var/log \
+    ci_servers
 ```
