@@ -157,8 +157,12 @@ class HaloAPICaller(object):
         return self.halo_api_auth_token
 
     def get_group_servers(self, group_id):
-        url = "%s:%d/%s/servers?group_id=%s" % (
-            self.halo_api_hostname, self.halo_api_port, self.halo_api_version, group_id)
+        if group_id.strip() == 'ALL_ENV' or group_id.strip() == '' or group_id.strip() == "":
+            url = "%s:%d/%s/servers" % (
+                self.halo_api_hostname, self.halo_api_port, self.halo_api_version)
+        else:
+            url = "%s:%d/%s/servers?group_id=%s" % (
+                self.halo_api_hostname, self.halo_api_port, self.halo_api_version, group_id)
         (data, auth_error) = self.do_get_request(url, self.halo_api_auth_token)
         if data:
             return json.loads(data), auth_error

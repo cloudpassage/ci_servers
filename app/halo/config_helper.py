@@ -30,7 +30,7 @@ class ConfigHelper(object):
         self.halo_api_auth_args = {'grant_type': 'client_credentials'}
         self.halo_api_auth_token = None
 
-        self.target_group_id = os.getenv("TARGET_GROUP_ID", "HARDSTOP")
+        self.target_group_id = os.getenv("TARGET_GROUP_ID", "ALL_ENV")
         self.output_directory = os.getenv("OUTPUT_DIRECTORY", "/var/log")
 
     def sane(self):
